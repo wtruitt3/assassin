@@ -1,0 +1,196 @@
+/* Style the sign-up section */
+/* Style the sign-up section */
+#signup-page {
+  text-align: center;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  margin: 0 auto; /* Center the sign-up section horizontally */
+  width: 50%; /* Set the width to 50% of the available screen width */
+  max-width: 400px; /* Limit the maximum width for readability */
+  margin-bottom: 20px;
+}
+
+/* Style the sign-up form */
+#signup-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Style form elements */
+label {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="file"] {
+  padding: 10px;
+  border: 2px solid #333;
+  border-radius: 5px;
+  width: 100%;
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+input[type="submit"] {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* Style the body */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+}
+
+/* Style the main content container */
+#content {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+/* Style the scoreboard page */
+#scoreboard-page {
+  margin-top: 20px;
+  text-align: center;
+}
+
+/* Style the team headers */
+
+/* Style the player list */
+.team {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center the content horizontally */
+  width: 48%; /* Adjust width for each team */
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a shadow for a nice look */
+  margin: 0 5px; /* Add some spacing between teams */
+}
+
+.team-container {
+  display: flex;
+  justify-content: space-between; /* Distribute teams horizontally */
+}
+
+.team-header {
+  font-size: 24px;
+  margin: 20px 0;
+  color: #333;
+}
+/* Style each team's player list */
+.team-list {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center the content horizontally */
+  width: 48%; /* Adjust width for each team */
+}
+
+/* Style each player item */
+li {
+  display: flex;
+  flex-direction: column; /* Stack the player image and name vertically */
+  align-items: center;
+  margin: 20px 0;
+  font-size: 18px;
+  border: 2px solid #333; /* Add a border around each player */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a shadow for a nice look */
+  background-color: #fff;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Style player images */
+li img {
+  width: 100px; /* Set a fixed width for player images */
+  height: 100px; /* Set a fixed height for player images */
+  border-radius: 50%; /* Make the images round */
+  margin-bottom: 10px; /* Add some spacing between the image and the player name */
+}
+
+/* Hover effect for player items */
+li:hover {
+  transform: scale(1.05); /* Enlarge the player item on hover */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Increase shadow on hover */
+}
+
+.video_container {
+  width: 100%; /* Set the width to 100% for responsiveness */
+  max-width: 800px; /* Set a maximum width */
+  margin: 0 auto; /* Center the container horizontally */
+  background-color: #f0f0f065; /* Background color */
+  padding: 20px; /* Padding around the videos */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a shadow */
+}
+
+/* Style for individual video elements */
+.video {
+  width: 560px; /* Set the width to 100% to fill the container */
+  height: 315px; /* Maintain the aspect ratio */
+  margin-bottom: 10px; /* Spacing between videos */
+}
+.status-column {
+  float: left;
+  width: 50%; /* Divide the width into two columns */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+th,
+td {
+  padding: 8px 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+.in-game {
+  color: green;
+}
+
+.out-game {
+  color: red;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 8px 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #f2f2f2;
+}

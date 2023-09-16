@@ -1,0 +1,131 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Button Click Example</title>
+    <script src="index.js"></script>
+  </head>
+  <body>
+    <h1>Button Click Example</h1>
+
+    <button id="myButton">Click Me</button>
+
+    <script>
+      // JavaScript function to be called when the button is clicked
+
+      // Attach the function to the button's click event
+      const button = document.getElementById("myButton");
+      button.addEventListener("click", getKeywords);
+    </script>
+  </body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <script src="index.js"></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .login-container {
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        padding: 20px;
+        text-align: center;
+      }
+
+      .login-container h1 {
+        font-size: 24px;
+        margin-bottom: 20px;
+        color: #333;
+      }
+
+      .keyword-input {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 2px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+      }
+
+      .login-button {
+        background-color: #333;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        font-size: 18px;
+        cursor: pointer;
+      }
+
+      .login-button:hover {
+        background-color: #555;
+      }
+    </style>
+  </head>
+  <body>
+    <iframe
+      src="https://docs.google.com/forms/d/e/1FAIpQLSffj5Crsi5LDaYkH1EdX1xqD5HhWCYv9vWcgbU3mKJX0AXDvA/viewform?embedded=true"
+      width="640"
+      height="669"
+      frameborder="0"
+      marginheight="0"
+      marginwidth="0"
+      >Loading…</iframe
+    >
+    <div class="login-container">
+      <h1>Login</h1>
+      <form id="login-form">
+        <input
+          type="password"
+          class="keyword-input"
+          placeholder="Enter Keyword"
+          id="keyword"
+        />
+        <button type="submit" class="login-button">Proceed</button>
+      </form>
+    </div>
+
+    <script>
+      document
+        .getElementById("login-form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          const keyword = document.getElementById("keyword").value;
+          const data = getKeywords("Sheet1!B2:C50");
+          let index = -1;
+          let name = "";
+          for (let i = 0; i < data.length; i++) {
+            if (keyword == data[i][1]) {
+              index = i;
+              name = data[i][0];
+            }
+          }
+
+          // Check the entered keyword (replace "yourKeyword" with the actual keyword)
+          if (index != -1) {
+            // Redirect to the next page or perform other actions here
+            alert("Login successful! Redirecting...");
+            // You can use window.location.href to redirect to another page
+            change_page(name);
+          } else {
+            alert("Invalid keyword. Please try again.");
+          }
+        });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Button Click Example</title>
+    <script src="index.js"></script>
+   <style>
+        /* Initially hide the text */
+        .hidden-text {
+            opacity: 0; /* Make the text invisible */
+            transition: opacity 0.3s ease; /* Add a smooth transition effect */
+        }
+
+        /* Display the text when hovered */
+        .hidden-text:hover {
+            opacity: 1; /* Make the text fully visible on hover */
+        }
+    </style>
+  </head>
+  <body>
+    <h1 id="nameTest"></h1>
+    <h2>Hover below to get your assignment</h2>
+    <p class="hidden-text">This text is hidden until you hover over it.</p>
+</body>
+    
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdMrd3lrtoceoDk58i-fCyrPGUaOHjeFUcGQL88KJ4QQoQXQw/viewform?embedded=true" width="640" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+    <div id = "videos" class = "video_container">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/KjRhnHcoMT8" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" ></iframe>
+    </div>
+  </body>
+  <script>
+      var url_string = window.location.href;
+      var url = new URL(url_string);
+      var name = url.searchParams.get("name");
+      document.getElementById("nameTest").innerHTML =
+        "Hello " + name + "! Welcome to GladiaTTors";
+      console.log(name);
+
+      var kills = getKeywords("videos!B2:D50");
+      console.log(kills)
+      for (let i = 0; i < kills.length; i++){
+        const newFrame = document.createElement("iframe");
+        console.log("please")
+        // Set attributes for the new element (optional)
+        newFrame.setAttribute("src", "https://www.youtube.com/embed/" + kills[i][0]);
+        newFrame.setAttribute("title", "Youtube video player");
+        newFrame.setAttribute("allow", "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share");
+        newFrame.setAttribute("width", "560")
+        newFrame.setAttribute("height", "315")
+        // newFrame.setAttribute("class" = "video")
+
+        // Set the inner text or HTML content (optional)
+        newFrame.innerText = "";
+
+        // Append the new element to an existing element in the DOM
+        const parentElement = document.getElementById("videos");
+        parentElement.appendChild(newFrame);
+      }
+    </script>
+    <h1>Game Status</h1>
+
+    <!-- Column for "In Game" -->
+    <div class="status-column">
+        <h2>In Game</h2>
+        <table id="inGame">
+            <!-- Add more rows for "In Game" players -->
+        </table>
+    </div>
+
+    <!-- Column for "Out of Game" -->
+    <div class="status-column">
+        <h2>Out of Game</h2>
+        <table id="outGame">
+            <!-- Add more rows for "Out of Game" players -->
+        </table>
+    </div>
+    <script>
+      var dead_names = getKeywords("videos!D2:D50");
+      var all_names = getKeywords("Sheet1!B2:B50");
+      console.log(all_names);
+      let found = 0;
+      for (let i = 0; i < all_names.length; i++){
+
+        for (let j = 0; j < dead_names.length; j++){
+          if ((all_names[i][0] == dead_names[j][0])){
+            const newTr = document.createElement("td");
+            newTr.innerHTML = all_names[i][0];
+            const parentElement = document.getElementById("outGame");
+            parentElement.appendChild(newTr);
+            found = 1;
+          } 
+        }
+        if (found == 0) {
+            const newTr = document.createElement("td");
+            newTr.innerHTML = all_names[i][0];
+            const parentElement = document.getElementById("inGame");
+            parentElement.appendChild(newTr);
+        } else {
+          found = 0;
+        }
+      }
+    </script>
+    <div style="clear: both;"></div>
+</html>
